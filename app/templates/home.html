@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>Flask Starter Code</h1>
-<p class="lead">Use this starter template for your Flask apps as a way to quickly start any new project.<br>
-All you get are these files and mostly barebones HTML/CSS files.</p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+          <div class="alert alert-success">
+              <strong>Success!</strong> {{ message }}
+          </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<h1>Info3180 Lab 3</h1>
+<p class="lead">In this lab, you will create a contact form and send an email using Flask-WTF and Flask_mail.<br>
+Navigate to the contact form to test it out</p>
+<p>To do:</p>
+<ol>
+    <li>Create Contact Form</li>
+    <li>Validate form and send mail</li>
+    <li>Display success message</li>
+</ol>
 {% endblock %}
